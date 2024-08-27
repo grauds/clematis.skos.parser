@@ -1,0 +1,96 @@
+<?xml version='1.0' ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skosxl="http://www.w3.org/2008/05/skos-xl#"
+>
+    <void:Dataset rdf:about="id/dataset/" xmlns:void="http://rdfs.org/ns/void#">
+        <skos:prefLabel xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en"> Dataset</skos:prefLabel>
+        <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en"> Dataset</rdfs:label>
+        <dcterms:title xml:lang="en" xmlns:dcterms="http://purl.org/dc/terms/"> Dataset</dcterms:title>
+        <foaf:homepage xmlns:foaf="http://xmlns.com/foaf/0.1/" rdf:resource=""/>
+        <dcterms:publisher xmlns:dcterms="http://purl.org/dc/terms/" rdf:resource=""/>
+        <dcterms:license xmlns:dcterms="http://purl.org/dc/terms/" rdf:resource=""/>
+        <void:vocabulary rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.w3.org/2004/02/skos/core"/>
+        <void:vocabulary rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.w3.org/2008/05/skos-xl"/>
+        <void:vocabulary rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags"/>
+        <void:dataDump rdf:resource="skos.xml"/>
+    </void:Dataset>
+    <skos:ConceptScheme xmlns:skos="http://www.w3.org/2004/02/skos/core#" rdf:about="id/scheme/">
+        <skos:prefLabel xml:lang="en"/>
+        <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en"/>
+        <dcterms:title xml:lang="en" xmlns:dcterms="http://purl.org/dc/terms/"/>
+        <skos:hasTopConcept>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+                <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+                <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Common concepts</rdfs:label>
+            </skos:Concept>
+        </skos:hasTopConcept>
+    </skos:ConceptScheme>
+    <skos:Concept xmlns:skos="http://www.w3.org/2004/02/skos/core#" rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/5984">
+        <skos:inScheme rdf:resource="id/scheme/"/>
+        <skosxl:prefLabel rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/5984"/>
+        <skos:prefLabel xml:lang="en">Common Core of Skills and Knowledge for the Childrens Workforce</skos:prefLabel>
+        <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Common Core of Skills and Knowledge for the Childrens Workforce</rdfs:label>
+        <skos:scopeNote xml:lang="en">Covers the areas of expertise essential for everyone working with children and young people, and will support work across professional boundaries and more flexible career routes.
+            Source: {CWDC|https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.childrenmattereast.org.uk/cms/uploads/MEDIA/DOCUMENTS/Common-Core.pdf} accessed 2012-06-06
+        </skos:scopeNote>
+        <skos:note xml:lang="en">Covers the areas of expertise essential for everyone working with children and young people, and will support work across professional boundaries and more flexible career routes.
+            Source: {CWDC|https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.childrenmattereast.org.uk/cms/uploads/MEDIA/DOCUMENTS/Common-Core.pdf} accessed 2012-06-06
+        </skos:note>
+        <skos:broader>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+                <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+                <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Common concepts</rdfs:label>
+            </skos:Concept>
+        </skos:broader>
+        <skos:related>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/916">
+                <skos:prefLabel xml:lang="en">Core skills</skos:prefLabel>
+                <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Core skills</rdfs:label>
+            </skos:Concept>
+        </skos:related>
+    </skos:Concept>
+    <skos:Concept xmlns:skos="http://www.w3.org/2004/02/skos/core#" rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+        <skos:topConceptOf rdf:resource="id/scheme/"/>
+        <skos:inScheme rdf:resource="id/scheme/"/>
+        <skosxl:prefLabel rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550"/>
+        <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+        <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Common concepts</rdfs:label>
+        <skos:altLabel xml:lang="en">Common terms</skos:altLabel>
+        <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Common terms</rdfs:label>
+        <skosxl:altLabel rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/1695"/>
+        <skos:scopeNote xml:lang="en">Do not use as indexing term. This heading includes
+            terms too general to be placed in a specific
+            subject field.
+        </skos:scopeNote>
+        <skos:note xml:lang="en">Do not use as indexing term. This heading includes
+            terms too general to be placed in a specific
+            subject field.
+        </skos:note>
+    </skos:Concept>
+    <skos:Concept xmlns:skos="http://www.w3.org/2004/02/skos/core#" rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/916">
+        <skos:inScheme rdf:resource="id/scheme/"/>
+        <skosxl:prefLabel rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/916"/>
+        <skos:prefLabel xml:lang="en">Core skills</skos:prefLabel>
+        <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Core skills</rdfs:label>
+        <skos:scopeNote xml:lang="en">Those skills which are essential for competence in
+            a particular task or occupation. Not necessarily
+            basic skills.
+        </skos:scopeNote>
+        <skos:note xml:lang="en">Those skills which are essential for competence in
+            a particular task or occupation. Not necessarily
+            basic skills.
+        </skos:note>
+        <skos:broader>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+                <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+                <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Common concepts</rdfs:label>
+            </skos:Concept>
+        </skos:broader>
+        <skos:related>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/374">
+                <skos:prefLabel xml:lang="en">Basic skills</skos:prefLabel>
+                <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:lang="en">Basic skills</rdfs:label>
+            </skos:Concept>
+        </skos:related>
+    </skos:Concept>
+</rdf:RDF>

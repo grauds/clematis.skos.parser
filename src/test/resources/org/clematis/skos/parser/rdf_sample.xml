@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <rdf:RDF xmlns="http://www.w3.org/2004/02/skos/core#"
+           xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:dcterms="http://purl.org/dc/terms/"
+           xmlns:km="https://ontology.clematis.org/Knowledge#">
+
+    <ConceptScheme rdf:about="https://data.clematis.org/a7834abb-0ae5-4ad6-bdd3-e276f3e68614">
+        <prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Experimental Biology FASEB 2021</prefLabel>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-10T11:56:28.553Z</dcterms:created>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-24T10:20:42.326Z</dcterms:modified>
+    </ConceptScheme>
+
+    <Concept rdf:about="https://data.clematis.org/09a20eab-4c03-4379-a96a-1923d76f591d">
+        <topConceptOf rdf:resource="https://data.clematis.org/a7834abb-0ae5-4ad6-bdd3-e276f3e68614"/>
+        <km:externalId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EB2105</km:externalId>
+        <prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physiology</prefLabel>
+        <inScheme rdf:resource="https://data.clematis.org/a7834abb-0ae5-4ad6-bdd3-e276f3e68614"/>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-10T11:56:28.553Z</dcterms:created>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-10T11:56:28.553Z</dcterms:modified>
+    </Concept>
+
+    <Concept rdf:about="https://data.clematis.org/18a88be1-34d1-43ed-850f-343fe20f9018">
+        <broader rdf:resource="https://data.clematis.org/09a20eab-4c03-4379-a96a-1923d76f591d"/>
+        <km:externalId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EB210637</km:externalId>
+        <prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Renal Toxins and Injury</prefLabel>
+        <inScheme rdf:resource="https://data.clematis.org/a7834abb-0ae5-4ad6-bdd3-e276f3e68614"/>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-10T11:56:28.553Z</dcterms:created>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-10T11:56:28.553Z</dcterms:modified>
+    </Concept>
+
+</rdf:RDF>

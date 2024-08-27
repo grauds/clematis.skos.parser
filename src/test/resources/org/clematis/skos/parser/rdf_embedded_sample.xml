@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf xml:lang="en"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:skosxl="http://www.w3.org/2008/05/skos-xl#"
+>
+
+    <void:Dataset rdf:about="id/dataset/" xmlns:void="http://rdfs.org/ns/void#">
+        <skos:prefLabel xml:lang="en"> Dataset</skos:prefLabel>
+        <rdfs:label xml:lang="en"> Dataset</rdfs:label>
+        <dcterms:title xml:lang="en" xmlns:dcterms="http://purl.org/dc/terms/"> Dataset</dcterms:title>
+        <foaf:homepage xmlns:foaf="http://xmlns.com/foaf/0.1/" rdf:resource=""/>
+        <dcterms:publisher xmlns:dcterms="http://purl.org/dc/terms/" rdf:resource=""/>
+        <dcterms:license xmlns:dcterms="http://purl.org/dc/terms/" rdf:resource=""/>
+        <void:vocabulary rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.w3.org/2004/02/skos/core"/>
+        <void:vocabulary rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.w3.org/2008/05/skos-xl"/>
+        <void:vocabulary rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags"/>
+        <void:dataDump rdf:resource="skos.xml"/>
+    </void:Dataset>
+    <skos:ConceptScheme rdf:about="id/scheme/">
+        <skos:prefLabel xml:lang="en"/>
+        <rdfs:label xml:lang="en"/>
+        <dcterms:title xml:lang="en" xmlns:dcterms="http://purl.org/dc/terms/"/>
+        <skos:hasTopConcept>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+                <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+                <rdfs:label xml:lang="en">Common concepts</rdfs:label>
+            </skos:Concept>
+        </skos:hasTopConcept>
+    </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/6683">
+        <skos:inScheme rdf:resource="id/scheme/"/>
+        <skosxl:prefLabel rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/6683"/>
+        <skos:prefLabel xml:lang="en">Allegations</skos:prefLabel>
+        <rdfs:label xml:lang="en">Allegations</rdfs:label>
+        <skos:broader>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+                <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+                <rdfs:label xml:lang="en">Common concepts</rdfs:label>
+            </skos:Concept>
+        </skos:broader>
+    </skos:Concept>
+    <skosxl:Label rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+        <skos:inScheme rdf:resource="id/scheme/"/>
+        <rdfs:label xml:lang="en">Common concepts</rdfs:label>
+        <skosxl:literalForm xml:lang="en">Common concepts</skosxl:literalForm>
+        <dcterms:identifier xmlns:dcterms="http://purl.org/dc/terms/">TNR-550</dcterms:identifier>
+    </skosxl:Label>
+    <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+        <skos:topConceptOf rdf:resource="id/scheme/"/>
+        <skos:inScheme rdf:resource="id/scheme/"/>
+        <skosxl:prefLabel rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550"/>
+        <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+        <rdfs:label xml:lang="en">Common concepts</rdfs:label>
+        <skos:altLabel xml:lang="en">Common terms</skos:altLabel>
+        <rdfs:label xml:lang="en">Common terms</rdfs:label>
+        <skosxl:altLabel rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/1695"/>
+        <skos:scopeNote xml:lang="en">Do not use as indexing term. This heading includes
+            terms too general to be placed in a specific
+            subject field.
+        </skos:scopeNote>
+        <skos:note xml:lang="en">Do not use as indexing term. This heading includes
+            terms too general to be placed in a specific
+            subject field.
+            </skos:note>
+    </skos:Concept>
+</rdf>

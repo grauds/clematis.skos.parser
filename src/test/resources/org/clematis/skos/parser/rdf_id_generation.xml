@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+        <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+        <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+        <!ENTITY local "http://localhost/awwathes#" > ]>
+<rdf:RDF
+        xmlns ="&local;"
+        xml:base ="&local;"
+        xmlns:skos ="http://www.w3.org/2004/02/skos/core#"
+        xmlns:rdf ="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:xsd ="http://www.w3.org/2001/XMLSchema#"
+        xmlns:local ="&local;">
+
+    <skos:ConceptScheme rdf:about="http://localhost/awwathes">
+        <skos:hasTopConcept local:alpha="--[ Biological, Chemical &amp; other Scientific Terms and Concepts ]--"/>
+
+    </skos:ConceptScheme>
+
+    <skos:Concept rdf:ID="T">
+        <skos:prefLabel>--[ Biological, Chemical &amp; other Scientific Terms and Concepts ]--</skos:prefLabel>
+        <skos:changeNote>2006/02/22 15:50 created by grant
+            2007/08/08 16:22 Changed from Biological, Chemical &amp; other Scientific Terms by grant
+            2007/08/09 10:06 Changed from Biological, Chemical &amp; other Scientific Terms and Concepts by grant
+            2007/08/09 10:08 Changed from [[[Biological, Chemical &amp; other Scientific Terms and Concepts]]] by grant
+            2007/08/09 10:11 Changed from --[[ Biological, Chemical &amp; other Scientific Terms and Concepts ]]-- by grant</skos:changeNote>
+        <status>Accepted</status>
+    </skos:Concept>
+</rdf:RDF>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf xml:lang="en"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:skosxl="http://www.w3.org/2008/05/skos-xl#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+>
+
+    <skos:ConceptScheme rdf:about="id/scheme/">
+        <skos:prefLabel xml:lang="en"/>
+        <dcterms:title xml:lang="en" />
+        <skos:hasTopConcept>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+                <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+            </skos:Concept>
+        </skos:hasTopConcept>
+    </skos:ConceptScheme>
+
+    <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+        <skos:topConceptOf rdf:resource="id/scheme/"/>
+        <skos:inScheme rdf:resource="id/scheme/"/>
+        <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/6683">
+        <skos:inScheme rdf:resource="id/scheme/"/>
+        <skos:prefLabel xml:lang="en">Allegations</skos:prefLabel>
+        <skos:broader>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/550">
+                <skos:prefLabel xml:lang="en">Common concepts</skos:prefLabel>
+            </skos:Concept>
+        </skos:broader>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/6684">
+        <skos:inScheme rdf:resource="id/scheme/"/>
+        <skosxl:prefLabel rdf:resource="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/6684"/>
+        <skos:prefLabel xml:lang="en">Circular</skos:prefLabel>
+        <skos:broader>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/6683">
+                <skos:prefLabel xml:lang="en">Allegations</skos:prefLabel>
+            </skos:Concept>
+        </skos:broader>
+        <skos:narrower>
+            <skos:Concept rdf:about="https://webarchive.nationalarchives.gov.uk/20130313174658/http://www.education.gov.uk/vocabularies/educationtermsandtags/6683">
+                <skos:prefLabel xml:lang="en">Allegations</skos:prefLabel>
+            </skos:Concept>
+        </skos:narrower>
+    </skos:Concept>
+
+</rdf>
