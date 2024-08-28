@@ -11,7 +11,7 @@ class Taxonomy extends ObjectData {
 
     private String doi
 
-    private final Set<Concept> concepts = ConcurrentHashMap.newKeySet()
+    private final Set<Concept> topConcepts = ConcurrentHashMap.newKeySet()
 
     private final Map<String, Concept> extId2concepts = new ConcurrentHashMap<>()
     private final Map<String, Concept> uri2concept = new ConcurrentHashMap<>()
@@ -19,6 +19,10 @@ class Taxonomy extends ObjectData {
 
     Taxonomy() {
         super()
+    }
+
+    Taxonomy(String uri) {
+        super(uri)
     }
 
     Taxonomy(String externalId, List<LanguageString> prefLabel) {
@@ -56,7 +60,7 @@ class Taxonomy extends ObjectData {
             new RuntimeException("Null concept is being added")
         }
 
-        concepts.add(c)
+        topConcepts.add(c)
     }
 
     void addConcept(Concept c) {
@@ -89,8 +93,13 @@ class Taxonomy extends ObjectData {
     }
 
     Set<Concept> getTopConcepts() {
-        return concepts
+        return topConcepts
     }
+
+    Collection<Concept> getConcepts() {
+        return uri2concept.values()
+    }
+
 
     int getSize() {
         return this.uri2concept.size()
@@ -111,8 +120,8 @@ class Taxonomy extends ObjectData {
             LOG.error("External id/concepts maps are different: {} and {}", extId2concepts, taxonomy.extId2concepts)
             return false
         }
-        if (!Utils.equal(concepts, taxonomy.topConcepts)) {
-            LOG.error("Top concepts are different: {} and {}", concepts, taxonomy.topConcepts)
+        if (!Utils.equal(topConcepts, taxonomy.topConcepts)) {
+            LOG.error("Top concepts are different: {} and {}", topConcepts, taxonomy.topConcepts)
             return false
         }
         if (!Utils.equal(uri2concept, taxonomy.uri2concept)) {
@@ -128,7 +137,7 @@ class Taxonomy extends ObjectData {
         result = 31 * result + doi.hashCode()
         result = 31 * result + extId2concepts.hashCode()
         result = 31 * result + uri2concept.hashCode()
-        result = 31 * result + concepts.hashCode()
+        result = 31 * result + topConcepts.hashCode()
         return result
     }
 }

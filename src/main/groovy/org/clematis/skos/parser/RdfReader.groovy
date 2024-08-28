@@ -134,7 +134,7 @@ class RdfReader {
         }
     }
 
-    private static Concept findConcept(xmlConcept, Taxonomy t) {
+    static Concept findConcept(xmlConcept, Taxonomy t) {
 
         String id = null
         Concept c = null
@@ -166,7 +166,7 @@ class RdfReader {
         return getTaxonomyFromXml(getXmlReader(is), reference)
     }
 
-    private static String getExternalId(xmlConcept) {
+    static String getExternalId(xmlConcept) {
         String uri = xmlConcept.'@rdf:about'.text()
         String uriLastPart = IdAware.getLastPart(uri)
 
@@ -292,7 +292,7 @@ class RdfReader {
         return t
     }
 
-    private static synchronized Taxonomy createTaxonomy(xmlTaxonomy) {
+    static synchronized Taxonomy createTaxonomy(xmlTaxonomy) {
 
         final String taxonomyUri = xmlTaxonomy.'@rdf:about'.text()
         final String doi = xmlTaxonomy.'km:doi'.text()
@@ -317,7 +317,7 @@ class RdfReader {
         return new Taxonomy(taxonomyUri, tExternalId, prefLabels, doi)
     }
 
-    private static Concept createConcept(xmlConcept, Taxonomy reference) {
+    static Concept createConcept(xmlConcept, Taxonomy reference) {
 
         final String conceptExId = getExternalId(xmlConcept)
         List<LanguageString> prefLabels = makePrefLabels(xmlConcept.'skos:prefLabel')

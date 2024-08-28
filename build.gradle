@@ -35,5 +35,7 @@ checkstyle {
 }
 
 test {
+    minHeapSize = "512m" // initial heap size
+    maxHeapSize = "4096m" // maximum heap size
     useJUnitPlatform()
 }

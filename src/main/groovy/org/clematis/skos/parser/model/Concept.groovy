@@ -81,12 +81,22 @@ class Concept extends ObjectData {
         addParent(parent)
     }
 
+    void addPrefLabel(LanguageString label) {
+        if (!prefLabel.contains(label) && label.getValue() != externalId) {
+            this.prefLabel.add(label)
+        } else if (prefLabel.contains(label)) {
+            LOG.warn("Skipped pref label {} as it is contained in pref label {}", label, prefLabel)
+        } else if (label.getValue() == externalId) {
+            LOG.warn("Skipped pref label {} as it is contained in external id {}", label, externalId)
+        }
+    }
+
     void addAltLabel(LanguageString label) {
         if (!prefLabel.contains(label) && label.getValue() != externalId) {
             this.altLabel.add(label)
         } else if (prefLabel.contains(label)) {
             LOG.warn("Skipped alt label {} as it is contained in pref label {}", label, prefLabel)
-        } else if (label.getValue().equals(externalId)) {
+        } else if (label.getValue() == externalId) {
             LOG.warn("Skipped alt label {} as it is contained in external id {}", label, externalId)
         }
     }
@@ -132,7 +142,7 @@ class Concept extends ObjectData {
     }
 
     Collection<Concept> getParents() {
-        return Collections.unmodifiableSet(this.parents)
+        return this.parents
     }
 
     Collection<Concept> getRelated() {
