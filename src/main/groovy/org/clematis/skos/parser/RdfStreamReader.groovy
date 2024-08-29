@@ -39,7 +39,6 @@ class RdfStreamReader extends DefaultHandler {
         ObjectData o = descriptionHandler.getObject()
         if (o instanceof Concept) {
             t.addConcept((Concept) o)
-            println t.getConcepts().size()
         } else if (o instanceof Taxonomy) {
             t = (Taxonomy) o
         }
