@@ -75,7 +75,7 @@ class RdfReader {
             final String narrowerId = findReferenceId(narrower)
             if (narrowerId) {
 
-                Concept p = findConceptById(narrowerId, t)
+                Concept p = Taxonomy.findConceptById(narrowerId, t)
 
                 if (p != null) {
                     p.setParent(c)
@@ -98,7 +98,7 @@ class RdfReader {
 
             final String broaderId = findReferenceId(broader)
             if (broaderId) {
-                Concept p = findConceptById(broaderId, t)
+                Concept p = Taxonomy.findConceptById(broaderId, t)
                 if (p != null) {
                     c.addParent(p)
                 } else {
@@ -124,7 +124,7 @@ class RdfReader {
 
             final String relatedId = findReferenceId(related)
             if (relatedId) {
-                Concept p = findConceptById(relatedId, t)
+                Concept p = Taxonomy.findConceptById(relatedId, t)
                 if (p != null) {
                     c.addRelated(p)
                 } else {
@@ -374,27 +374,4 @@ class RdfReader {
         return rdf
     }
 
-    static Concept findConceptById(String id, Taxonomy t) {
-
-        // check if the broader id is an UUID and construct URI for it
-        final String uri = ObjectData.formatToURI(id)
-        Concept p = t.getByUri(uri)
-
-        // falling back to search by the former ID
-        if (p == null) {
-            p = t.getByUri(UUIDHelper.getGeneratedIdsPool().get(id))
-        }
-
-        // try to search in taxonomy as it was a label
-        if (p == null) {
-            p = t.getByLabel(id)
-        }
-
-        // try to search in taxonomy as it was an external id
-        if (p == null) {
-            p = t.getByExtId(id)
-        }
-
-        return p
-    }
 }

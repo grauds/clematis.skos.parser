@@ -70,7 +70,7 @@ class RdfStreamReader extends DefaultHandler {
         c.getParents().clear()
 
         for (Concept b in parents) {
-            Concept p = RdfReader.findConceptById(b.getId(), t)
+            Concept p = Taxonomy.findConceptById(b.getId(), t)
             if (p != null) {
                 c.addParent(p)
             } else {

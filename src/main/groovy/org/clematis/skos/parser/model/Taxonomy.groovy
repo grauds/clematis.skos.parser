@@ -1,9 +1,13 @@
 package org.clematis.skos.parser.model
 
+import org.clematis.skos.parser.TaxonomyUtils
+
 import java.util.concurrent.ConcurrentHashMap
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.clematis.skos.parser.UUIDHelper
+
 
 class Taxonomy extends ObjectData {
 
@@ -41,6 +45,30 @@ class Taxonomy extends ObjectData {
                 (List<LanguageString>) t.prefLabel,
                 (String) t.doi
         )
+    }
+
+    static Concept findConceptById(String id, Taxonomy t) {
+
+        // check if the broader id is an UUID and construct URI for it
+        final String uri = formatToURI(id)
+        Concept p = t.getByUri(uri)
+
+        // falling back to search by the former ID
+        if (p == null) {
+            p = t.getByUri(UUIDHelper.getGeneratedIdsPool().get(id))
+        }
+
+        // try to search in taxonomy as it was a label
+        if (p == null) {
+            p = t.getByLabel(id)
+        }
+
+        // try to search in taxonomy as it was an external id
+        if (p == null) {
+            p = t.getByExtId(id)
+        }
+
+        return p
     }
 
     Concept getByExtId(String l) {
@@ -116,15 +144,15 @@ class Taxonomy extends ObjectData {
             LOG.error("Taxonomy DOIs are different: {} and {}", doi, taxonomy.doi)
             return false
         }
-        if (!Utils.equal(extId2concepts, taxonomy.extId2concepts)) {
+        if (!TaxonomyUtils.equal(extId2concepts, taxonomy.extId2concepts)) {
             LOG.error("External id/concepts maps are different: {} and {}", extId2concepts, taxonomy.extId2concepts)
             return false
         }
-        if (!Utils.equal(topConcepts, taxonomy.topConcepts)) {
+        if (!TaxonomyUtils.equal(topConcepts, taxonomy.topConcepts)) {
             LOG.error("Top concepts are different: {} and {}", topConcepts, taxonomy.topConcepts)
             return false
         }
-        if (!Utils.equal(uri2concept, taxonomy.uri2concept)) {
+        if (!TaxonomyUtils.equal(uri2concept, taxonomy.uri2concept)) {
             LOG.error("External id maps are different: {} and {}", uri2concept, taxonomy.uri2concept)
             return false
         }
