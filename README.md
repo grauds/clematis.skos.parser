@@ -4,7 +4,7 @@ This library provides parsers for [SKOS](https://www.w3.org/2004/02/skos/) files
 
 1. Described by RDF tags with SKOS attributes, for instance:
 
-```xml!
+```xml
 <rdf:RDF 
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#">
@@ -24,7 +24,7 @@ This library provides parsers for [SKOS](https://www.w3.org/2004/02/skos/) files
 ```
 2. Described with SKOS tags in default namespace plus RDF tags in a separate namespace, for instance:
 
-```xml=!
+```xml
 <rdf:RDF 
          xmlns="http://www.w3.org/2004/02/skos/core#"
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -48,12 +48,11 @@ This library provides parsers for [SKOS](https://www.w3.org/2004/02/skos/) files
 First parser is based on [Groovy Slurper for XML ](https://groovy-lang.org/processing-xml.html#_xmlparser_and_xmlslurper) and allows modification of the SKOS source XML. It supports both formats, mentioned above. The only pitfall is even though Groovy XMLSlurper has a small memory footprint, it reads the whole DOM into the memory and if the file it big enough, it may be impossible to parse it.
 
 To use it, simply call the parsing method with the file name or input stream:
-```groovy!
+```groovy
 Taxonomy taxonomy = RdfReader.getTaxonomyFromXml("parser/rdf_sample.xml")
 ```
 It will give back a Taxonomy class instance which is readonly in terms of XML processing. Also, it is possible to manipulate XML according to [Groovy docs](https://groovy-lang.org/processing-xml.html#_manipulating_xml).
-
-```groovy!
+```groovy
 def rdf = RdfReader.getXmlReader("parser/rdf_sample.xml")
 rdf.Description[1].replaceNode { 
     Description(id: "https://domain.com/id2") {
