@@ -79,4 +79,4 @@ Taxonomy taxonomy = RdfStreamReader.getTaxonomyFromXml("parser/rdf_sample.xml")
 List<Stack<Concept>> paths = TaxonomyUtils.getCircularDependencies(taxonomy)
 ```
 
-The method will return all the paths as a list of stacked concepts.
+The method will return all the paths as a list of stacked concepts.
