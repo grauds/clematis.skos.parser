@@ -1,6 +1,7 @@
 plugins {
     id 'groovy'
     id 'checkstyle'
+    id 'maven-publish'
 }
 
 group = 'org.clematis.skos'
@@ -38,4 +39,24 @@ test {
     minHeapSize = "512m" // initial heap size
     maxHeapSize = "4096m" // maximum heap size
     useJUnitPlatform()
+}
+
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/grauds/clematis.skos.parser"
+            credentials {
+                username = System.getenv("USERNAME")
+                password = System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            artifactId 'skos-parser'
+            from(components.java)
+        }
+    }
 }
