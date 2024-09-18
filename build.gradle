@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'org.clematis.skos'
+group = 'org.clematis'
 version = '1.0-SNAPSHOT'
 
 repositories {
