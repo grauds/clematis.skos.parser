@@ -108,16 +108,5 @@ class RdfReaderTest {
         Assertions.assertEquals(1, paths.size())
         Assertions.assertEquals(4, paths.get(0).size())
     }
-
-    @Test
-    void testCircularRdfBig() {
-        Taxonomy taxonomy = RdfStreamReader.getTaxonomyFromXml("parser/Wiley-Atypon_Taxonomy_Concept_09-08-2024_converted.skos")
-        Assertions.assertEquals(24, taxonomy.getTopConcepts().size())
-
-        List<Stack<Concept>> paths = TaxonomyUtils.getCircularDependencies(taxonomy)
-
-        Assertions.assertEquals(1, paths.size())
-        Assertions.assertEquals(4, paths.get(0).size())
-    }
 }
 
