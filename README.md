@@ -1,5 +1,8 @@
 # Clematis SKOS Parsers
 
+[![Gradle Package](https://github.com/grauds/clematis.skos.parser/actions/workflows/gradle-publish.yml/badge.svg)](https://github.com/grauds/clematis.skos.parser/actions/workflows/gradle-publish.yml)
+
+
 This library provides parsers for [SKOS](https://www.w3.org/2004/02/skos/) files in two formats:
 
 1. Described by RDF tags with SKOS attributes, for instance:
