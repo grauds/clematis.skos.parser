@@ -1,16 +1,19 @@
 package org.clematis.skos.parser
 
-import org.clematis.skos.parser.model.LanguageString
-
 import java.nio.file.Path
 
 import groovy.xml.StreamingMarkupBuilder
 import groovy.xml.XmlUtil
 import org.clematis.skos.parser.model.ObjectData
+import org.clematis.skos.parser.model.LanguageString
 import org.clematis.skos.parser.model.Taxonomy
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 
 class RdfWriter {
+
+    private static final Logger LOG = LoggerFactory.getLogger(RdfWriter.class)
 
     static void saveTaxonomyToFile(Path inFile, Taxonomy t) {
 
@@ -69,10 +72,10 @@ class RdfWriter {
                             }
                         }
 
-                        parentClosure(parent)
-                        if (parentClosure != topConceptOfClosure) {
-                            inScheme('rdf:resource': t.getUri())
-                        }
+                       // parentClosure(parent)
+                       // if (parentClosure != topConceptOfClosure) {
+                       //     inScheme('rdf:resource': t.getUri())
+                      //  }
                         for (child in concept.children) {
                             narrower('rdf:resource': child.getUri())
                         }
