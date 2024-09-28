@@ -17,7 +17,9 @@ import org.xml.sax.helpers.DefaultHandler
 
 class RdfStreamReader extends DefaultHandler {
 
-    static final Logger LOG = LoggerFactory.getLogger(RdfStreamReader.class)
+    private static final Logger LOG = LoggerFactory.getLogger(RdfStreamReader.class)
+
+    private final List<IReaderListener> listeners = new ArrayList<>();
 
     private DescriptionHandler descriptionHandler = new DescriptionHandler()
 
@@ -39,8 +41,22 @@ class RdfStreamReader extends DefaultHandler {
         ObjectData o = descriptionHandler.getObject()
         if (o instanceof Concept) {
             t.addConcept((Concept) o)
+            fireConceptCreated((Concept) o)
         } else if (o instanceof Taxonomy) {
             t = (Taxonomy) o
+            fireTaxonomyCreated(t)
+        }
+    }
+
+    void fireConceptCreated(Concept c) {
+        for (IReaderListener listener : this.listeners) {
+            listener.conceptCreated(c)
+        }
+    }
+
+    void fireTaxonomyCreated(Taxonomy t) {
+        for (IReaderListener listener : this.listeners) {
+            listener.taxonomyCreated(t)
         }
     }
 
@@ -82,6 +98,5 @@ class RdfStreamReader extends DefaultHandler {
             t.addTopConcept(c)
         }
     }
-
 }
 

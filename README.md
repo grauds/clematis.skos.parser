@@ -57,10 +57,11 @@ Taxonomy taxonomy = RdfReader.getTaxonomyFromXml("parser/rdf_sample.xml")
 It will give back a Taxonomy class instance which is readonly in terms of XML processing. Also, it is possible to manipulate XML according to [Groovy docs](https://groovy-lang.org/processing-xml.html#_manipulating_xml).
 ```groovy
 def rdf = RdfReader.getXmlReader("parser/rdf_sample.xml")
-rdf.Description[1].replaceNode { 
+rdf.Description[1].replaceNode {
     Description(id: "https://domain.com/id2") {
         prefLabel("To Kill a Mockingbird")
     }
+}
 assert rdf.Description[1].prefLabel.text() == "To Kill a Mockingbird"    
 ```
 
