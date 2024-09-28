@@ -18,4 +18,11 @@ public interface IReaderListener {
      * @param taxonomy created
      */
     void taxonomyCreated(Taxonomy taxonomy);
+
+    /**
+     * A parent is added to a concept event
+     * @param c concept
+     * @param p parent
+     */
+    void parentAdded(Concept c, Concept p);
 }

@@ -60,6 +60,12 @@ class RdfStreamReader extends DefaultHandler {
         }
     }
 
+    static void fireParentAdded(Concept c, Concept p) {
+        for (IReaderListener listener : this.listeners) {
+            listener.parentAdded(c, p)
+        }
+    }
+
     static synchronized Taxonomy getTaxonomyFromXml(String fileName, Taxonomy reference = null) {
         return getTaxonomyFromXml(ResourceAnchor.getResourceAsStream(fileName), reference)
     }
@@ -89,6 +95,7 @@ class RdfStreamReader extends DefaultHandler {
             Concept p = Taxonomy.findConceptById(b.getId(), t)
             if (p != null) {
                 c.addParent(p)
+                fireParentAdded(c, p)
             } else {
                 LOG.error("No parent with id=" + b.getId())
             }
