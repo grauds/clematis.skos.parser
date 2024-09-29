@@ -20,8 +20,10 @@ dependencies {
         exclude group: 'xerces', module: 'xercesImpl'
     }
     implementation 'com.opencsv:opencsv:3.7'
-    implementation 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
-
+    implementation ('org.codehaus.groovy.modules.http-builder:http-builder:0.7.1') {
+        exclude group: "net.sourceforge.nekohtml", module: "nekohtml"
+        exclude group: 'xerces', module: 'xercesImpl'
+    }
     implementation 'org.slf4j:slf4j-api:2.0.12'
     implementation 'org.slf4j:slf4j-simple:2.0.12'
     implementation 'org.slf4j:slf4j-log4j12:2.0.12'

@@ -48,6 +48,12 @@ class RdfStreamReader extends DefaultHandler {
         }
     }
 
+    void addReaderListener(IReaderListener readerListener) {
+        if (readerListener != null) {
+            this.listeners.add(readerListener)
+        }
+    }
+
     void fireConceptCreated(Concept c) {
         for (IReaderListener listener : this.listeners) {
             listener.conceptCreated(c)
@@ -60,7 +66,7 @@ class RdfStreamReader extends DefaultHandler {
         }
     }
 
-    static void fireParentAdded(Concept c, Concept p) {
+    void fireParentAdded(Concept c, Concept p) {
         for (IReaderListener listener : this.listeners) {
             listener.parentAdded(c, p)
         }
