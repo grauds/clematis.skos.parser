@@ -14,7 +14,8 @@ repositories {
 dependencies {
     checkstyle "com.puppycrawl.tools:checkstyle:10.9.3"
 
-    implementation 'org.apache.groovy:groovy-all:4.0.14'
+    implementation "org.codehaus.groovy:groovy-all:3.0.22"
+    //implementation 'org.apache.groovy:groovy-all:4.0.14'
     implementation ('org.apache.poi:poi-ooxml:5.3.0') {
         exclude group: 'xml-apis', module: 'xml-apis'
         exclude group: 'xerces', module: 'xercesImpl'
