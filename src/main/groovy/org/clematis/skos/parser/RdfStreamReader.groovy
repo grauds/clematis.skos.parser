@@ -72,15 +72,24 @@ class RdfStreamReader extends DefaultHandler {
         }
     }
 
-    static synchronized Taxonomy getTaxonomyFromXml(String fileName, Taxonomy reference = null) {
-        return getTaxonomyFromXml(ResourceAnchor.getResourceAsStream(fileName), reference)
+    static synchronized Taxonomy getTaxonomyFromXml(String fileName,
+                                                    List<IReaderListener> listeners) {
+        return getTaxonomyFromXml(ResourceAnchor.getResourceAsStream(fileName), listeners)
     }
 
-    static synchronized Taxonomy getTaxonomyFromXml(InputStream is, Taxonomy reference = null) {
+    static synchronized Taxonomy getTaxonomyFromXml(InputStream is,
+                                                    List<IReaderListener> listeners
+    ) {
 
         SAXParserFactory factory = SAXParserFactory.newInstance()
         SAXParser parser = factory.newSAXParser()
         RdfStreamReader reader = new RdfStreamReader()
+
+        if (listeners != null) {
+            for (IReaderListener listener : listeners) {
+                reader.addReaderListener(listener)
+            }
+        }
 
         parser.parse(is, reader)
 
