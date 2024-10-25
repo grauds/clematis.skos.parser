@@ -4,14 +4,6 @@ pipeline {
 
     stages {
 
-        stage('Get code') {
-            steps {
-               // Get some code from a GitHub repository
-               git 'https://github.com/grauds/clematis.skos.parser.git'
-               sh 'chmod +x gradlew'
-            }
-        }
-
         stage('Gradle build') {
             steps {
               sh './gradlew clean build'
