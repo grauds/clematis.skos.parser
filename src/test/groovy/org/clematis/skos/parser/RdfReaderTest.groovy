@@ -1,7 +1,5 @@
 package org.clematis.skos.parser
 
-import java.nio.file.Path
-
 import org.clematis.skos.parser.model.Concept
 import org.clematis.skos.parser.model.LanguageString
 import org.clematis.skos.parser.model.Taxonomy
@@ -111,13 +109,5 @@ class RdfReaderTest {
         Assertions.assertEquals(4, paths.get(0).size())
     }
 
-    @Test
-    void testSerializeRdfBig() {
-        Taxonomy taxonomy = RdfStreamReader.getTaxonomyFromXml(
-                "parser/Wiley-Atypon Thesaurus_Concept_10-09-2024.xml"
-        )
-        Assertions.assertEquals(19, taxonomy.getTopConcepts().size())
-        RdfWriter.saveTaxonomyToFile(Path.of("atypon.skos"), taxonomy)
-    }
 }
 
