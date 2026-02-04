@@ -1,7 +1,7 @@
 package org.clematis.skos.parser.model
 
-import static junit.framework.TestCase.assertEquals
-import static junit.framework.TestCase.assertTrue
+import static org.junit.jupiter.api.Assertions.assertEquals
+import static org.junit.jupiter.api.Assertions.assertTrue
 import org.clematis.skos.parser.UUIDHelper
 import org.junit.jupiter.api.Test
 
